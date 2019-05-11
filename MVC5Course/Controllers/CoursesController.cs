@@ -17,7 +17,7 @@ namespace MVC5Course.Controllers
         // GET: Courses
         public ActionResult Index()
         {
-            var course = db.Course.Include(c => c.Department);
+            var course = db.Course.Where(p => !p.Title.Contains("Git"));
             return View(course.ToList());
         }
 

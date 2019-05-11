@@ -23,6 +23,8 @@ namespace MVC5Course.Models
         }
     
         public int CourseID { get; set; }
+
+        [Required(ErrorMessage = "請輸入課程名稱")]
         public string Title { get; set; }
 
         [UIHint("Credits")]
