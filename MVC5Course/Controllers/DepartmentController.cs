@@ -1,4 +1,5 @@
 ﻿using MVC5Course.ViewModels;
+using MVC5Course.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,18 @@ namespace MVC5Course.Controllers
 {
     public class DepartmentController : Controller
     {
+        ContosoUniversityEntities db = new ContosoUniversityEntities();
+
         public ActionResult Index()
         {
-            return View();
+            var data = from p in db.Department
+                       select new DepartmentCreationVM()
+                       {
+                           Name = p.Name,
+                           Budget = p.Budget,
+                           StartDate = p.StartDate
+                       };
+            return View(data.ToList());
         }
 
         public ActionResult Create()
@@ -24,7 +34,14 @@ namespace MVC5Course.Controllers
         {
             if (ModelState.IsValid)
             {
-                // TODO
+                db.Department.Add(new Department()
+                {
+                    Budget = data.Budget,
+                    Name = data.Name,
+                    StartDate = data.StartDate
+                });
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 

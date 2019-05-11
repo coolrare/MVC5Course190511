@@ -11,8 +11,7 @@ namespace MVC5Course.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Course
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,11 +22,7 @@ namespace MVC5Course.Models
         }
     
         public int CourseID { get; set; }
-
-        [Required(ErrorMessage = "請輸入課程名稱")]
         public string Title { get; set; }
-
-        [UIHint("Credits")]
         public int Credits { get; set; }
         public int DepartmentID { get; set; }
     
