@@ -11,7 +11,7 @@ using MVC5Course.Models;
 namespace MVC5Course.Controllers
 {
     [RoutePrefix("c")]
-    public class CoursesController : Controller
+    public class CoursesController : BaseController
     {
         CourseRepository repo;
         DepartmentRepository repoDept;

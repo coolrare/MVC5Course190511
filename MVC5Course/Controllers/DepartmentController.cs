@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC5Course.Controllers
 {
-    public class DepartmentController : Controller
+    public class DepartmentController : BaseController
     {
         ContosoUniversityEntities db = new ContosoUniversityEntities();
 
