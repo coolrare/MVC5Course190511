@@ -14,6 +14,14 @@ namespace MVC5Course.Controllers
     {
         private ContosoUniversityEntities db = new ContosoUniversityEntities();
 
+        public CoursesController()
+        {
+            db.Database.Log = (sql) =>
+            {
+                //System.IO.File.AppendAllText(@"G:\a.log", sql);
+            };
+        }
+
         // GET: Courses
         public ActionResult Index()
         {
