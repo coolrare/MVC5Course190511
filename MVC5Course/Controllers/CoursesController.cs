@@ -90,7 +90,7 @@ namespace MVC5Course.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseID,Title,Credits,DepartmentID,Location")] Course course)
+        public ActionResult Edit(Course course)
         {
             if (ModelState.IsValid)
             {
