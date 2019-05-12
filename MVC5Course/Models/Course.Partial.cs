@@ -1,5 +1,6 @@
 namespace MVC5Course.Models
 {
+    using MVC5Course.DataTypeAttributes;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -15,6 +16,7 @@ namespace MVC5Course.Models
         public int CourseID { get; set; }
         
         [StringLength(40, ErrorMessage="欄位長度不得大於 50 個字元")]
+        [驗證標題不允許出現特定文字(Words = new String[] { "MVC", "Water" })]
         public string Title { get; set; }
         [Required]
         [Range(1, 5, ErrorMessage = "Credits 請輸入 1 ~ 5")]
