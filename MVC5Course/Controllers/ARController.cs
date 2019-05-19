@@ -51,5 +51,14 @@ sitemaps: https://blog.miniasp.com/sitemap.axd
                 return File(file, "image/jpeg");
             }
         }
+
+        [OutputCache(NoStore = true, Duration = 0)]
+        public ActionResult JsonTest()
+        {
+            return Json(new {
+                Id = 1,
+                Name = "Will"
+            }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

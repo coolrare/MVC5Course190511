@@ -7,6 +7,18 @@
 
 <hr />
 
+<button type="button" onclick="getData()">取得 Json 資料</button>
+
+<br />
+
 <a href="@Url.Action("FileTest", "AR")?dl=True">
     <img src="@Url.Action("FileTest", "AR")" width="500" />
 </a>
+
+<script>
+    function getData() {
+        $.get('@Url.Action("JsonTest", "AR")', function (data) {
+            console.log(data);
+        });
+    }
+</script>
