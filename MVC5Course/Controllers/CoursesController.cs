@@ -99,8 +99,8 @@ namespace MVC5Course.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("edit/{id}")]
-        [ValidateInput(false)]
-        public ActionResult Edit(int id, FormCollection form)
+        //[ValidateInput(false)]
+        public ActionResult Edit(int id, object doNothingHere)
         {
             Course course = repo.Find(id);
             if (TryUpdateModel<IEditCourse>(course) &&
