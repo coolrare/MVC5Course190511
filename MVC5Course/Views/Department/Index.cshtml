@@ -9,6 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+
 <table class="table">
     <tr>
         <th>
@@ -20,26 +24,32 @@
         <th>
             @Html.DisplayNameFor(model => model.StartDate)
         </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Budget)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @{
+        var data = Model.ToArray();
+    }
+    @for (int i = 0; i < data.Length; i++)
+    {
+        @Html.HiddenFor(modelItem => data[i].DepartmentId)
+
+        <tr>
+            <td>
+                @Html.EditorFor(modelItem => data[i].Name)
+                @Html.ValidationMessageFor(modelItem => data[i].Name)
+            </td>
+            <td>
+                @Html.EditorFor(modelItem => data[i].Budget)
+                @Html.ValidationMessageFor(modelItem => data[i].Budget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => data[i].StartDate)
+            </td>
+        </tr>
+    }
 
 </table>
+
+    <input type="submit" value="批次更新" />
+
+}
