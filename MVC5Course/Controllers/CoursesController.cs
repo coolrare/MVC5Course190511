@@ -100,7 +100,7 @@ namespace MVC5Course.Controllers
         {
             Course course = repo.Find(id);
 
-            if (TryUpdateModel(course, "", null, new string[] { "Enrollment" }))
+            if (TryUpdateModel<IEditCourse>(course))
             {
                 repo.UnitOfWork.Commit();
                 return RedirectToAction("Index");
