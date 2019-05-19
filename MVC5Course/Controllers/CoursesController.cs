@@ -153,5 +153,15 @@ namespace MVC5Course.Controllers
             }
             base.Dispose(disposing);
         }
+
+#if !DEBUG
+        [NonAction]
+#endif
+        [OutputCache(NoStore = true, Duration = 0)]
+        [Route("debug")]
+        public ActionResult Debug()
+        {
+            return Json(new { OK = 1 }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
