@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC5Course.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,17 @@ namespace MVC5Course.Controllers
             Session["key5"] = "5";
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Test()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Test(FormCollection form)
+        {
+            return Content(form["Name"]);
         }
     }
 }

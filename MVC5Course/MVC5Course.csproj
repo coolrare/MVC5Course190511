@@ -295,6 +295,7 @@
     <Content Include="Views\AR\Index.cshtml" />
     <Content Include="Views\AR\Index2.cshtml" />
     <Content Include="Views\MB\Index.cshtml" />
+    <Content Include="Views\MB\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
