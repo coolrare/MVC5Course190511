@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MVC5Course.ActionFilters;
 using MVC5Course.Models;
 
 namespace MVC5Course.Controllers
@@ -157,6 +158,7 @@ namespace MVC5Course.Controllers
 #if !DEBUG
         [NonAction]
 #endif
+        [LocalOnly]
         [OutputCache(NoStore = true, Duration = 0)]
         [Route("debug")]
         public ActionResult Debug()

@@ -1,9 +1,6 @@
-﻿using MVC5Course.ViewModels;
+﻿using MVC5Course.ActionFilters;
 using MVC5Course.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using MVC5Course.ViewModels;
 using System.Web.Mvc;
 
 namespace MVC5Course.Controllers
@@ -12,20 +9,14 @@ namespace MVC5Course.Controllers
     {
         ContosoUniversityEntities db = new ContosoUniversityEntities();
 
+        [取得Department清單]
         public ActionResult Index()
         {
-            var data = from p in db.Department
-                       select new DepartmentCreationVM()
-                       {
-                           DepartmentId = p.DepartmentID,
-                           Name = p.Name,
-                           Budget = p.Budget,
-                           StartDate = p.StartDate
-                       };
-            return View(data.ToList());
+            return View(ViewBag.DepartmentList);
         }
 
         [HttpPost]
+        [取得Department清單]
         public ActionResult Index(DepartmentBatchUpdateVM[] data)
         {
             if (ModelState.IsValid)
@@ -42,14 +33,7 @@ namespace MVC5Course.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(from p in db.Department
-                        select new DepartmentCreationVM()
-                        {
-                            DepartmentId = p.DepartmentID,
-                            Name = p.Name,
-                            Budget = p.Budget,
-                            StartDate = p.StartDate
-                        });
+            return View(ViewBag.DepartmentList);
         }
 
         public ActionResult Create()
