@@ -13,45 +13,49 @@
 @using (Html.BeginForm())
 {
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Budget)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>
-    </tr>
-
-    @{
-        var data = Model.ToArray();
-    }
-    @for (int i = 0; i < data.Length; i++)
-    {
-        @Html.HiddenFor(modelItem => data[i].DepartmentId)
-
+    <table class="table">
         <tr>
-            <td>
-                @Html.EditorFor(modelItem => data[i].Name)
-                <br />
-                @Html.ValidationMessageFor(modelItem => data[i].Name, "", new { @class = "text-danger" })
-            </td>
-            <td>
-                @Html.EditorFor(modelItem => data[i].Budget)
-                <br />
-                @Html.ValidationMessageFor(modelItem => data[i].Budget, "", new { @class = "text-danger" })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => data[i].StartDate)
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
         </tr>
-    }
 
-</table>
+        @{
+            var data = Model.ToArray();
+        }
+        @for (int i = 0; i < data.Length; i++)
+        {
+            @Html.HiddenFor(modelItem => data[i].DepartmentId)
+
+            <tr>
+                <td>
+                    @Html.EditorFor(modelItem => data[i].Name)
+                    <br />
+                    @Html.ValidationMessageFor(modelItem => data[i].Name, "", new { @class = "text-danger" })
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => data[i].Budget)
+                    <br />
+                    @Html.ValidationMessageFor(modelItem => data[i].Budget, "", new { @class = "text-danger" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => data[i].StartDate)
+                </td>
+            </tr>
+        }
+
+    </table>
 
     <input type="submit" value="批次更新" />
 
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
