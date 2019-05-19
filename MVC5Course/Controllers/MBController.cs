@@ -41,6 +41,17 @@ namespace MVC5Course.Controllers
                 return RedirectToAction("Index");
             }
 
+            //ModelState.Clear();
+            //ModelState.Remove("Budget");
+            //ModelState["Budget"].Errors.Clear();
+            //ModelState["Budget"].Value.AttemptedValue;
+            //ModelState.Add()
+            foreach (var item in ModelState["Budget"].Errors)
+            {
+                //item.ErrorMessage;
+            }
+            //ModelState.AddModelError("Budget", "My ERROR");
+
             return View(form);
         }
     }
