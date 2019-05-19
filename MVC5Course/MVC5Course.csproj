@@ -125,6 +125,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MBController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="DataTypeAttributes\驗證標題不允許出現特定文字.cs" />
     <Compile Include="Global.asax.cs">
@@ -293,6 +294,7 @@
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\AR\Index.cshtml" />
     <Content Include="Views\AR\Index2.cshtml" />
+    <Content Include="Views\MB\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
