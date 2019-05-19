@@ -34,9 +34,14 @@ namespace MVC5Course.Controllers
         }
 
         [HttpPost]
-        public ActionResult Test(FormCollection form)
+        public ActionResult Test(DepartmentCreationVM form)
         {
-            return Content(form["Name"]);
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(form);
         }
     }
 }
