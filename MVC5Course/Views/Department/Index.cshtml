@@ -36,11 +36,13 @@
         <tr>
             <td>
                 @Html.EditorFor(modelItem => data[i].Name)
-                @Html.ValidationMessageFor(modelItem => data[i].Name)
+                <br />
+                @Html.ValidationMessageFor(modelItem => data[i].Name, "", new { @class = "text-danger" })
             </td>
             <td>
                 @Html.EditorFor(modelItem => data[i].Budget)
-                @Html.ValidationMessageFor(modelItem => data[i].Budget)
+                <br />
+                @Html.ValidationMessageFor(modelItem => data[i].Budget, "", new { @class = "text-danger" })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => data[i].StartDate)
