@@ -12,6 +12,8 @@ using MVC5Course.Models;
 namespace MVC5Course.Controllers
 {
     [RoutePrefix("c")]
+    [HandleError(View = "Error.ArgumentException",
+        ExceptionType = typeof(ArgumentException))]
     public class CoursesController : BaseController
     {
         CourseRepository repo;
@@ -97,6 +99,7 @@ namespace MVC5Course.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("edit/{id}")]
+        [ValidateInput(false)]
         public ActionResult Edit(int id, FormCollection form)
         {
             Course course = repo.Find(id);

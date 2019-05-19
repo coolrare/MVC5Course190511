@@ -4,6 +4,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     [MetadataType(typeof(CourseMetaData))]
     public partial class Course : IValidatableObject, IEditCourse
@@ -12,6 +13,7 @@
         {
             if (this.Credits <= 3 && this.Title.Length > 10)
             {
+                throw new ArgumentException("驗證失敗");
                 yield return new ValidationResult("當 Credits <= 3 時，課程名稱的長度不能超過 10 個字元", new string[] { "Credits", "Title" });
             }
         }
@@ -22,6 +24,7 @@
         int CourseID { get; set; }
         string Title { get; set; }
         int Credits { get; set; }
+        string Location { get; set; }
     }
 
     public partial class CourseMetaData
@@ -32,6 +35,7 @@
         [StringLength(40, ErrorMessage="欄位長度不得大於 50 個字元")]
         [驗證標題不允許出現特定文字(Words = new String[] { "MVC", "Water" })]
         [Required]
+        [AllowHtml]
         public string Title { get; set; }
 
         [Required]

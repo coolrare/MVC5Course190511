@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace MVC5Course.Controllers
 {
+#if !DEBUG
+    [RequireHttps]
+#endif
     public abstract class BaseController : Controller
     {
         protected override void HandleUnknownAction(string actionName)
