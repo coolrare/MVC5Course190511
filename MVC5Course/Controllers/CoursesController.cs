@@ -99,8 +99,8 @@ namespace MVC5Course.Controllers
         public ActionResult Edit(int id, FormCollection form)
         {
             Course course = repo.Find(id);
-
-            if (TryUpdateModel<IEditCourse>(course))
+            if (TryUpdateModel<IEditCourse>(course) &&
+                TryValidateModel(course))
             {
                 repo.UnitOfWork.Commit();
                 return RedirectToAction("Index");
