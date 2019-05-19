@@ -96,14 +96,23 @@ namespace MVC5Course.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("edit/{id}")]
-        public ActionResult Edit(Course course)
+        public ActionResult Edit(int id, FormCollection form)
         {
-            if (ModelState.IsValid)
+            Course course = repo.Find(id);
+
+            if (TryUpdateModel(course, "", null, new string[] { "Enrollment" }))
             {
-                repo.UnitOfWork.Context.Entry(course).State = EntityState.Modified;
                 repo.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
+
+            //if (ModelState.IsValid)
+            //{
+            //    repo.UnitOfWork.Context.Entry(course).State = EntityState.Modified;
+            //    repo.UnitOfWork.Commit();
+            //    return RedirectToAction("Index");
+            //}
+
             ViewBag.DepartmentID = new SelectList(repoDept.All(), "DepartmentID", "Name", course.DepartmentID);
             return View(course);
         }
