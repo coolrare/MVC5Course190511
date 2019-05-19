@@ -22,6 +22,8 @@ namespace MVC5Course.Controllers
         {
             TempData["key3"] = "3";
 
+            Session["key5"] = "5";
+
             return RedirectToAction("Index");
         }
     }
