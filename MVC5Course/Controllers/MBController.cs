@@ -8,10 +8,10 @@ namespace MVC5Course.Controllers
 {
     public class MBController : BaseController
     {
-        public ActionResult Index()
+        public ActionResult Index(string key1, string key2)
         {
-            ViewData["key1"] = "1";
-            ViewBag.key2 = "2";
+            ViewData["key1"] = key1;
+            ViewBag.key2 = key2;
 
             ViewData.Model = "4";
 
