@@ -303,6 +303,7 @@
     <Content Include="Views\MB\Test2.cshtml" />
     <Content Include="Views\Shared\Error.ArgumentException.cshtml" />
     <Content Include="Views\VT\Index.cshtml" />
+    <Content Include="Views\VT\View1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
