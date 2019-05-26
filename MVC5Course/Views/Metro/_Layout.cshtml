@@ -327,8 +327,8 @@
             <div id="sidebar-left" class="span2">
                 <div class="nav-collapse sidebar-nav">
                     <ul class="nav nav-tabs nav-stacked main-menu">
-                        <li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-                        <li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>
+                        <li class="@(Url.Action("Index", "Metro") == Request.Url.PathAndQuery ? "active" : "")"><a href="@Url.Action("Index", "Metro")"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+                        <li class="@(Url.Action("Messages", "Metro") == Request.Url.PathAndQuery ? "active" : "")"><a href="@Url.Action("Messages", "Metro")"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>
                         <li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Tasks</span></a></li>
                         <li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
                         <li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>
