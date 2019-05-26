@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+    var data = new int[] { 1, 2, 3, 4, 5 };
+}
+
+@foreach (var item in data)
+{
+    @item
+}
+
+
+@foreach (var item in data)
+{
+    @(item + " ")
+}
+
+
+<ul>
+@foreach (var item in data)
+{
+  <li>@item</li>
+}
+</ul>

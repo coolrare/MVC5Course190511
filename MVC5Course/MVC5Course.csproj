@@ -129,6 +129,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MBController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\VTController.cs" />
     <Compile Include="DataTypeAttributes\驗證標題不允許出現特定文字.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -301,6 +302,7 @@
     <Content Include="Views\MB\Test.cshtml" />
     <Content Include="Views\MB\Test2.cshtml" />
     <Content Include="Views\Shared\Error.ArgumentException.cshtml" />
+    <Content Include="Views\VT\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
