@@ -16,6 +16,7 @@ namespace MVC5Course.ViewModels
         [Required]
         public decimal Budget { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         public System.DateTime StartDate { get; set; }
     }
 

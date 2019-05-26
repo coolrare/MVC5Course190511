@@ -3,9 +3,11 @@
     using MVC5Course.DataTypeAttributes;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
+    [DisplayName("客戶資料")]
     [MetadataType(typeof(CourseMetaData))]
     public partial class Course : IValidatableObject, IEditCourse
     {
@@ -41,6 +43,7 @@
         [Required]
         [Range(1, 5, ErrorMessage = "Credits 請輸入 1 ~ 5")]
         [UIHint("Credits")]
+        [DisplayName("客戶等級")]
         public int Credits { get; set; }
         [Required]
         public int DepartmentID { get; set; }

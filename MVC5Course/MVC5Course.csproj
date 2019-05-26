@@ -488,6 +488,7 @@
     <Content Include="Views\Courses\List.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime_Disabled.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
