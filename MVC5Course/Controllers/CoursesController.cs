@@ -35,6 +35,7 @@ namespace MVC5Course.Controllers
 
         // GET: Courses
         [Route("list/{deptId}")]
+        [ChildActionOnly]
         public ActionResult List(int deptId)
         {
             var course = repo.All().Where(p => p.DepartmentID == deptId);
