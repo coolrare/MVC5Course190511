@@ -33,6 +33,14 @@ namespace MVC5Course.Controllers
             return View(course.ToList());
         }
 
+        // GET: Courses
+        [Route("list/{deptId}")]
+        public ActionResult List(int deptId)
+        {
+            var course = repo.All().Where(p => p.DepartmentID == deptId);
+            return PartialView(course.ToList());
+        }
+
         // GET: Courses/Details/5
         [Route("{id}")]
         public ActionResult Details(int? id)

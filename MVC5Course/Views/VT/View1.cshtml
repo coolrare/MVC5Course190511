@@ -1,9 +1,21 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "View1";
 }
 
+@functions {
+    public int MyId { get; set; } = 1;
+}
+
 <h2>View1</h2>
+
+@ToLink()
+
+@MyId
+
+@helper ToLink()
+{ 
+    <a href="">123</a>
+}
 
 @section scripts {
     <script></script>

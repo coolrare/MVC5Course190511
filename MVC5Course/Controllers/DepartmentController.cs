@@ -2,6 +2,9 @@
 using MVC5Course.Models;
 using MVC5Course.ViewModels;
 using System.Web.Mvc;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace MVC5Course.Controllers
 {
@@ -58,6 +61,18 @@ namespace MVC5Course.Controllers
             }
 
             return View(data);
+        }
+
+        public ActionResult Details(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return HttpNotFound();
+            }
+
+            var dept = db.Department.Find(id.Value);
+
+            return View(dept);
         }
     }
 }
