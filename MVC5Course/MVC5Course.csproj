@@ -43,6 +43,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <MvcBuildViews>true</MvcBuildViews>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -485,6 +486,8 @@
     <Content Include="Views\Department\Details.cshtml" />
     <Content Include="Views\Department\Courses.cshtml" />
     <Content Include="Views\Courses\List.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

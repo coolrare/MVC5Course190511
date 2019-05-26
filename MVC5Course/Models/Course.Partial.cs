@@ -40,6 +40,7 @@
 
         [Required]
         [Range(1, 5, ErrorMessage = "Credits 請輸入 1 ~ 5")]
+        [UIHint("Credits")]
         public int Credits { get; set; }
         [Required]
         public int DepartmentID { get; set; }
