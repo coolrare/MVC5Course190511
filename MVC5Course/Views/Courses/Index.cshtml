@@ -55,10 +55,13 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CourseID }) |
+                @Ajax.ActionLink("Details", "Details", new { id = item.CourseID }, new AjaxOptions() { UpdateTargetId = "details" }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
             </td>
         </tr>
     }
 
 </table>
+
+<div id="details"></div>
+
