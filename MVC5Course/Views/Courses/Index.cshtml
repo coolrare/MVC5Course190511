@@ -6,6 +6,11 @@
 
 @section Scripts {
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        function DetailsLoaded() {
+            alert('資料載入成功!');
+        }
+    </script>
 }
 
 <h2>Index</h2>
@@ -55,7 +60,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
-                @Ajax.ActionLink("Details", "Details", new { id = item.CourseID }, new AjaxOptions() { UpdateTargetId = "details" }) |
+                @Ajax.ActionLink("Details", "Details", new { id = item.CourseID }, new AjaxOptions() { UpdateTargetId = "details", Confirm = "你要載入這筆資料嗎？", InsertionMode = InsertionMode.Replace, OnSuccess = "DetailsLoaded" }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
             </td>
         </tr>
