@@ -91,7 +91,7 @@ namespace <#= Namespace #>
 <#		if (UseAsync) { #>
             return View(await <#= entitySetVar #>.ToListAsync());
 <#		} else { #>
-            return View(<#= entitySetVar #>.ToList());
+            return View(<#= entitySetVar #>);
 <#		} #>
 <# } else { #>
 <#		if (UseAsync) { #>
