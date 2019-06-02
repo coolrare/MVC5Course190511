@@ -114,6 +114,12 @@ if (pkName != null) {
 }
 
 </table>
+
+@{ 
+    var data = Model as IPagedList;
+}
+@Html.PagedListPager(data, (p) => Url.Action("Index", new { pageNo = p }))
+
 <#
 // The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
 #>
