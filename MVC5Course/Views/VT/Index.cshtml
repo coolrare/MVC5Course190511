@@ -16,8 +16,12 @@
 
 
 <ul>
-@foreach (var item in data)
-{
-  <li>@item</li>
-}
+    @foreach (var item in data)
+    {
+        <li>@item</li>
+    }
 </ul>
+
+
+
+<a href="@HttpUtility.UrlPathEncode("/Ho me/Index")?q=@Url.Encode("多 奇/123")">123</a>
