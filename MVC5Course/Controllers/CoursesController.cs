@@ -177,5 +177,11 @@ namespace MVC5Course.Controllers
         {
             return Json(new { OK = 1 }, JsonRequestBehavior.AllowGet);
         }
+
+        [Route("GetTime")]
+        public ActionResult GetTime()
+        {
+            return Content(DateTime.Now.ToString());
+        }
     }
 }
