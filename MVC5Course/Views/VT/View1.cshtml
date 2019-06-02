@@ -20,3 +20,13 @@
 @section scripts {
     <script></script>
 }
+
+@{ 
+    ViewBag.Message = @"123<>
+456
+789";
+}
+
+<script>
+    console.log('@Ajax.JavaScriptStringEncode(ViewBag.Message)');
+</script>
