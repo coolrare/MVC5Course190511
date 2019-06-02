@@ -69,7 +69,11 @@
 
 </table>
 
-@Html.PagedListPager(Model as IPagedList, (p) => Url.Action("Index", new { pageNo = p }))
+@{ 
+    var data = Model as IPagedList;
+}
+@Html.PagedListPager(data, 
+    (p) => Url.Action("Index", new { pageNo = p, pageSize = data.PageSize }))
 
 
 <div id="details"></div>
