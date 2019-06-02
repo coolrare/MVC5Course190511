@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC5Course.Models;
+using X.PagedList;
 
 namespace MVC5Course.Controllers
 {
@@ -15,10 +16,10 @@ namespace MVC5Course.Controllers
         private ContosoUniversityEntities db = new ContosoUniversityEntities();
 
         // GET: Courses1
-        public ActionResult Index()
+        public ActionResult Index(int pageNo = 1)
         {
-            var course = db.Course.Include(c => c.Department);
-            return View(course.ToList());
+            var course = db.Course.OrderBy(p => p.CourseID).ToPagedList(pageNo, 1);
+            return View(course);
         }
 
         // GET: Courses1/Details/5
