@@ -13,7 +13,7 @@ namespace MVC5Course.Models
 
         public override IQueryable<Course> All()
         {
-            return base.All().Where(p => p.Credits >= 1);
+            return base.All().Where(p => p.Credits >= 1).OrderBy(p => p.CourseID);
         }
 
         public IQueryable<Course> Get©Ò¦³Git½Òµ{()

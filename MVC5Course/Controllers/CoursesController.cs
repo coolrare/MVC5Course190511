@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVC5Course.ActionFilters;
 using MVC5Course.Models;
+using X.PagedList;
 
 namespace MVC5Course.Controllers
 {
@@ -27,10 +28,10 @@ namespace MVC5Course.Controllers
 
         // GET: Courses
         [Route("")]
-        public ActionResult Index()
+        public ActionResult Index(int pageNo = 1, int pageSize = 3)
         {
-            var course = repo.All();
-            return View(course.ToList());
+            var course = repo.All().ToPagedList(pageNo, pageSize);
+            return View(course);
         }
 
         // GET: Courses
